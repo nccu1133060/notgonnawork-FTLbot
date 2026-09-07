@@ -1,4 +1,5 @@
 import os
+from keep_alive import keep_alive
 import discord
 from discord.ext import commands
 from discord import app_commands
@@ -89,4 +90,5 @@ async def on_app_command_error(interaction: discord.Interaction, error: app_comm
             await interaction.response.send_message("執行指令時發生錯誤，請稍後再試。", ephemeral=True)
 
 # 啟動機器人
+keep_alive()  # 啟動虛擬網頁
 bot.run(os.getenv("DISCORD_TOKEN"))
